@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Service;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -11,8 +12,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -32,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
    String TAG ="MainActivity";
 
    private RadioGroup sex;
+
+   private TextView jump;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         sex =(RadioGroup) findViewById(R.id.sex);
-
+        jump =(TextView) findViewById(R.id.jump);
 
         // 方法一监听事件,通过获取点击的id来实例化并获取选中状态的RadioButton控件
         sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -58,7 +65,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        jump.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
 
+                if(event.getAction()==MotionEvent.ACTION_DOWN) {
+                    Intent intent = new Intent(MainActivity.this, TabActivity.class);
+
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
 
 
 
