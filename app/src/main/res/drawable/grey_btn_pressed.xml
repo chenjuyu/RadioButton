@@ -13,7 +13,7 @@
         android:width="2dp"
         android:color="#07ACED"></stroke>
 
-    <!--实心-->
+    <!--实心 -->
     <solid android:color="#07ACED" />
 
     <padding

@@ -18,13 +18,13 @@
 
        <RadioButton
            android:id="@+id/all"
-
            android:gravity="center"
            android:layout_width="80dp"
            android:layout_height="wrap_content"
-           android:textColor="@color/colorPrimaryDark"
+           android:textColor="@drawable/radiobutton_textcolor"
            android:background="@drawable/btn_selector"
            android:button="@null"
+           android:checked="true"
            android:textSize="20sp"
            android:text="全部" >
        </RadioButton>
@@ -37,15 +37,18 @@
              android:button="@null"
              android:checked="true"
              android:gravity="center"
+             android:textColor="@drawable/radiobutton_textcolor"
+             android:layout_marginLeft="5dp"
              android:text="收入"
              android:textSize="20sp"></RadioButton>
          <RadioButton
              android:id="@+id/Out"
-             android:checked="true"
+             android:textColor="@drawable/radiobutton_textcolor"
              android:gravity="center"
              android:button="@null"
              android:textSize="20sp"
              android:layout_width="80dp"
+             android:layout_marginLeft="5dp"
              android:layout_height="wrap_content"
              android:background="@drawable/btn_selector"
              android:text="支出" >

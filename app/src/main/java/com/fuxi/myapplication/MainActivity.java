@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Service;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 int id = group.getCheckedRadioButtonId();
                 /* 通过id实例化选中的这个RadioButton */
                 RadioButton choise = (RadioButton) findViewById(id);
+               // choise.setTextColor(Color.WHITE);
              //   choise.setChecked(true);
                 // 获取这个RadioButton的text内容
                 String output = choise.getText().toString();
